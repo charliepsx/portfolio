@@ -277,7 +277,7 @@ footer {
 
 /* Responsive adjustments for smaller screens */
 
-@media (max-width: 637px) {
+@media (max-width: 814px) {
     .side-nav{
         top: 60%;
     }
