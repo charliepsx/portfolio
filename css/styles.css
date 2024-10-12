@@ -191,12 +191,6 @@ footer {
     .container {
         width: 90%;
     }
-
-    .d-flex {
-        flex-direction: column;
-        align-items: center;
-    }
-
 }
 
 @media (max-width: 480px) {
@@ -279,4 +273,42 @@ footer {
 .pulsating {
     animation: pulsate 3s ease-in-out infinite;
     transition: none;
+}
+
+/* Responsive adjustments for smaller screens */
+
+@media (max-width: 637px) {
+    .side-nav{
+        top: 60%;
+    }
+    .side-nav img {
+
+        height: 40px; 
+        width: 40px; 
+        margin-bottom: 10px;
+        padding: 10px 30px;
+    }
+
+    .side-nav-left p {
+        font-size: 1.75rem;
+    }
+    
+    h1{
+        font-size: 2rem;
+    }
+    .skill-icon {
+        width: 40px; 
+        height: auto;
+    }
+
+    .skill-card {
+        width: 80px; 
+        height: 80px;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+        bottom: 0;
+    }
+
 }
