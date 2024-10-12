@@ -1,0 +1,34 @@
+{
+    "en": {
+      "home": "Home",
+      "profile": "Profile",
+      "projects": "Projects",
+      "intro": "Hi there! I'm Charlie, a Junior developer based in Mexico. Explore my skills and projects below.",
+      "profile_section": {
+        "heading": "Profile",
+        "paragraph1": "I am a junior developer based in Mexico with a degree in computer systems engineering, passionate about learning and exploring web development.",
+        "paragraph2": "I am familiar with version control systems like Git, which help me manage my projects effectively. I also have an interest in design and use tools like Krita and Blender for creative projects.",
+        "paragraph3": "I am always eager to contribute to exciting projects and collaborate with others in a team-oriented environment."
+      },
+      "projects_section": {
+        "heading": "Projects",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      }
+    },
+    "es": {
+      "home": "Inicio",
+      "profile": "Perfil",
+      "projects": "Proyectos",
+      "intro": "¡Hola! Soy Charlie, un desarrollador Junior con sede en México. Explora mis habilidades y proyectos a continuación.",
+      "profile_section": {
+        "heading": "Perfil",
+        "paragraph1": "Soy un desarrollador junior con sede en México con un título en ingeniería en sistemas computacionales, apasionado por aprender y explorar el desarrollo web.",
+        "paragraph2": "Estoy familiarizado con los sistemas de control de versiones como Git, que me ayudan a gestionar mis proyectos de manera efectiva. También tengo interés en el diseño y uso herramientas como Krita y Blender para proyectos creativos.",
+        "paragraph3": "Siempre estoy ansioso por contribuir a proyectos emocionantes y colaborar con otros en un entorno orientado al trabajo en equipo."
+      },
+      "projects_section": {
+        "heading": "Proyectos",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      }
+    }
+  }
