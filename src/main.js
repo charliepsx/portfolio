@@ -31,17 +31,29 @@ const initControls = async () => {
     return new OrbitControls(camera, renderer.domElement);
 };
 
-// GLTFLoader to load the model dynamically
+
+// GLTFLoader with Draco support
 const initGLTFLoader = async () => {
     const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
-    return new GLTFLoader();
+    const { DRACOLoader } = await import('three/examples/jsm/loaders/DRACOLoader.js');
+
+    // Set up Draco loader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('three/examples/jsm/libs/draco/'); // Set path to Draco decoder files
+
+    const loader = new GLTFLoader();
+    loader.setDRACOLoader(dracoLoader); // Use Draco loader with GLTFLoader
+
+    return loader;
 };
 
 // Load the model
 const loadModel = (loader, controls) => {
+    console.log('Starting model load...');
     loader.load(
         'assets/spyrocup.glb',
         (gltf) => {
+            console.log('Model loaded successfully with Draco compression!');
             const model = gltf.scene;
             model.traverse((o) => {
                 if (o.isMesh && o.material.map) {
@@ -49,9 +61,9 @@ const loadModel = (loader, controls) => {
                 }
             });
             scene.add(model);
-            model.position.set(0, -1, 0); // Set model position
-            model.scale.set(1, 1, 1); // Set model scale
-            animate(model, controls); // Start animation after model is loaded
+            model.position.set(0, -1, 0);
+            model.scale.set(1, 1, 1);
+            animate(model, controls);
         },
         undefined,
         (error) => {
