@@ -8,6 +8,10 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
+      input: {
+        main: 'index.html',
+        es: 'index_es.html', 
+      },
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
