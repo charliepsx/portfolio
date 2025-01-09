@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
         <link rel="stylesheet" href="/portfolio/css/styles.css" />
-      <script type="module" crossorigin src="/portfolio/assets/three-Dn1MS982.js"></script>
-      <script type="module" crossorigin src="/portfolio/assets/main-CUz32UjR.js"></script>
+        <link rel="icon" type="image/svg+xml" href="/portfolio/images/favicon.svg" width="24">
+      <script type="module" crossorigin src="/portfolio/assets/model-E6zJVYIt.js"></script>
     </head>
 
     <body>
         <header>
-            <nav class="side-nav" aria-label="Main Navigation">
+            <nav class="side-nav-right" aria-label="Main Navigation">
                 <a href="#home" aria-label="Go to Home">
                     <img src="/portfolio/images/home.svg" alt="Home" />
                 </a>
@@ -23,16 +23,21 @@
                 </a>
             </nav>
             <nav class="side-nav-left">
-                <a href="index_es.html"><p>ES</p></a>
+                <a href="index_es.html" title="Spanish"><p>ES</p></a>
+                <a href="mailto:charliepsx@yahoo.com" aria-label="Email" title="Send me an email">
+                    <img src="/portfolio/images/mail.svg" alt="mail"/>
+                </a>
+                <a href="https://github.com/charliepsx" target="_blank" aria-label="GitHub" title="View my GitHub profile">
+                    <img src="/portfolio/images/github.svg" alt="GitHub"/>
+                </a>
+                <a href="assets/cv.pdf" target="_blank" aria-label="CV" title="Download my Curriculum">
+                    <img src="/portfolio/images/cv.svg" alt="CV"/>
+                </a>
             </nav>
         </header>
 
         <main class="container">
             <section id="home">
-                <div
-                    id="canvas-container"
-                    aria-label="3D Model Placeholder"
-                ></div>
                 <h1>
                     Hi there! I'm Charlie,<br />a
                     <span class="animated-text">
@@ -228,57 +233,39 @@
                 <h2>Projects</h2>
                 <div class="card-container">
                     <div class="card">
-                        <p>Short description of Project 1.</p>
+                        <a href="https://web.mediaserviceagency.com" target="_blank"><p>Landing Page</p></a>
+                        <a href="https://web.mediaserviceagency.com" target="_blank"><img src="/portfolio/images/landing.png" width="380"></a>
+                       
                     </div>
                     <div class="card">
-                        <p>Short description of Project 2.</p>
+                        <p>Clock</p>
+                        <div class="clock-container">
+                            <div id="date"></div>
+                            <div id="digital-clock"></div>
+                        </div>
+                        
                     </div>
                     <div class="card">
-                        <p>Short description of Project 3.</p>
+                        <p>3D Model Viewer</p>
+                        <div
+                        id="canvas-container"
+                        aria-label="3D Model Placeholder">
+                        
+                    </div>
+                    </div>
+                   
+                    
+                    <div class="card">
+                        <p>placeholder</p>
                     </div>
                     <div class="card">
-                        <p>Short description of Project 4.</p>
+                        <p>placeholder</p>
                     </div>
                 </div>
             </section>
 
             <br /><br /><br /><br />
         </main>
-
-        <footer>
-            <div class="contact-info">
-                <a
-                    href="mailto:robypsx@gmail.com"
-                    aria-label="Email"
-                    title="Send me an email"
-                >
-                    <img
-                        src="/portfolio/images/gmail.svg"
-                        alt="Gmail"
-                        class="contact-icon"
-                    />
-                </a>
-                <a
-                    href="https://github.com/charliepsx"
-                    target="_blank"
-                    aria-label="GitHub"
-                    title="View my GitHub profile"
-                >
-                    <img
-                        src="/portfolio/images/github.svg"
-                        alt="GitHub"
-                        class="contact-icon"
-                    />
-                </a>
-                <a href="#" aria-label="CV" title="Download my Curriculum">
-                    <img
-                        src="/portfolio/images/pdf.svg"
-                        alt="CV"
-                        class="contact-icon"
-                    />CV
-                </a>
-            </div>
-        </footer>
 
         <script src="/portfolio/js/script.js"></script>
     </body>
