@@ -28,3 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+//  clock
+function updateClock() {
+    const now = new Date();
+    
+    // Get current date details
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('en-US', options);
+
+    // Get current time details
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const clock = `${hours}:${minutes}:${seconds}`;
+    
+    // Update the HTML
+    document.getElementById('date').textContent = dateString;
+    document.getElementById('digital-clock').textContent = clock;
+}
+
+// Update the clock immediately and then every second
+updateClock();
+setInterval(updateClock, 1000);

@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
 
 <body>
     <header>
-        <nav class="side-nav" aria-label="Main Navigation">
+        <nav class="side-nav-right" aria-label="Main Navigation">
             <a href="#home" aria-label="Go to Home">
                 <img src="/images/home.svg" alt="Home">
             </a>
@@ -22,18 +23,26 @@
             </a>
         </nav>
         <nav class="side-nav-left">
-            <a href="index.html"><p>EN</p></a>
+            <a href="index.html" title="Ingles"><p>EN</p></a>
+            <a href="mailto:charliepsx@yahoo.com" aria-label="Email" title="Send me an email">
+                <img src="/images/mail.svg" alt="mail"/>
+            </a>
+            <a href="https://github.com/charliepsx" target="_blank" aria-label="GitHub" title="View my GitHub profile">
+                <img src="/images/github.svg" alt="GitHub"/>
+            </a>
+            <a href="/assets/cv.pdf" target="_blank" aria-label="CV" title="Download my Curriculum">
+                <img src="/images/cv.svg" alt="CV"/>
+            </a>
         </nav>
     </header>
 
     <main class="container">
         <section id="home">
-            <div id="canvas-container" aria-label="3D Model Placeholder"></div>
             <h1>¡Hola! Soy Charlie,<br>un <span class="animated-text">
                     <span style="--i: 1">D</span><span style="--i: 2">e</span><span style="--i: 3">s</span><span style="--i: 4">a</span><span style="--i: 5">r</span><span style="--i: 6">r</span><span
                         style="--i: 7">o</span><span style="--i: 8">l</span><span style="--i: 9">l</span><span
                         style="--i: 10">a</span><span style="--i: 11">d</span><span style="--i: 12">o</span><span style="--i: 13">r</span> <span style="--i: 14">J</span><span style="--i: 15">r</span><span style="--i: 16">.</span>
-                </span> situado en México. <br> Explora mis habilidades y proyectos.</h1>
+                </span> situado en México. <br> Te invito a explorar mis habilidades y proyectos.</h1>
         </section>
 
         <section id="skills">
@@ -115,7 +124,7 @@
         <section id="profile">
             <h2>Perfil</h2>
             <p>
-                Soy un desarrollador junior con sede en México, con una licenciatura en ingeniería en sistemas computacionales, apasionado por aprender y explorar el desarrollo web. Tengo experiencia en tecnologías de front-end como HTML, CSS y JavaScript, enfocándome en construir páginas web responsivas y mejorar interfaces de usuario.
+                Soy un desarrollador junior situado en México, con una licenciatura en ingeniería en sistemas computacionales, apasionado por aprender y explorar el desarrollo web. Tengo experiencia en tecnologías de front-end como HTML, CSS y JavaScript, enfocándome en construir páginas web responsivas y mejorar interfaces de usuario.
             </p>
             <p>
                 Estoy familiarizado con sistemas de control de versiones como Git, los cuales me ayudan a gestionar mis proyectos de manera efectiva. También tengo interés en el diseño y utilizo herramientas como Krita y Blender para proyectos creativos.
@@ -127,30 +136,44 @@
         </section>
         <section id="projects">
             <h2>Proyectos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis explicabo deserunt saepe alias, et sit
-                minus perspiciatis aut facere possimus placeat non ratione dolore accusamus ab expedita id earum totam.
-            </p>
+            <div class="card-container">
+                <div class="card">
+                    <a href="https://web.mediaserviceagency.com" target="_blank"><p>Landing Page</p></a>
+                    <a href="https://web.mediaserviceagency.com" target="_blank"><img src="/images/landing.png" width="380"></a>
+                   
+                </div>
+                <div class="card">
+                    <p>Clock</p>
+                    <div class="clock-container">
+                        <div id="date"></div>
+                        <div id="digital-clock"></div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <p>3D Model Viewer</p>
+                    <div
+                    id="canvas-container"
+                    aria-label="3D Model Placeholder">
+                    
+                </div>
+                </div>
+               
+                
+                <div class="card">
+                    <p>placeholder</p>
+                </div>
+                <div class="card">
+                    <p>placeholder</p>
+                </div>
+            </div>
         </section>
 
         <br><br><br><br>
     </main>
 
-    <footer>
-        <div class="contact-info">
-            <a href="mailto:robypsx@gmail.com" aria-label="Email" title="Send me an email">
-                <img src="/images/gmail.svg" alt="Gmail" class="contact-icon" />
-            </a>
-            <a href="https://github.com/charliepsx" target="_blank" aria-label="GitHub" title="View my GitHub profile">
-                <img src="/images/github.svg" alt="GitHub" class="contact-icon" />
-            </a>
-            <a href="#" aria-label="CV" title="Download my Curriculum">
-                <img src="/images/pdf.svg" alt="CV" class="contact-icon" />CV
-            </a>
-        </div>
-    </footer>
-
-    <script src="/js/script.js"></script>
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/public/js/model.js"></script>
 </body>
 
 </html>
