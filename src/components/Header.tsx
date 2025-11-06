@@ -43,7 +43,13 @@ const Header: React.FC<HeaderProps> = ({ language, onLanguageChange, mode, onMod
         p: 2,
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
         backgroundColor: scrolled ? (mode === 'dark' ? 'rgba(28, 28, 28, 0.8)' : 'rgba(255, 255, 255, 0.8)') : 'transparent',
-        transition: 'backdrop-filter 0.3s, background-color 0.3s',
+        // subtle drop shadow when header becomes sticky to lift it above content
+        boxShadow: scrolled
+          ? mode === 'dark'
+            ? '0 6px 20px rgba(0,0,0,0.55)'
+            : '0 6px 20px rgba(15,23,42,0.08)'
+          : 'none',
+        transition: 'backdrop-filter 0.3s, background-color 0.3s, box-shadow 0.3s',
       }}
     >
       <Box sx={{ display: 'flex', gap: 2 }}>

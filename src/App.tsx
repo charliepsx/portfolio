@@ -23,7 +23,7 @@ function InnerApp() {
           position: 'relative',
           zIndex: 1,
           // translucent frosted glass with subtle gradient
-          backgroundColor: mode === 'dark' ? 'rgba(28,28,28,0.1)' : 'rgba(255,255,255,0.1)',
+          backgroundColor: mode === 'dark' ? 'rgba(75, 70, 75, 0.2)' : 'rgba(107, 105, 105, 0.1)',
         }}
       >
         <Header language={language} onLanguageChange={setLanguage} mode={mode || 'dark'} onModeChange={(m) => setMode(m)} />

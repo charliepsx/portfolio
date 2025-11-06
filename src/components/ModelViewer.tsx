@@ -18,13 +18,20 @@ const ModelViewer: React.FC = () => {
       renderer.setClearColor(0x000000, 0); // Transparent
       mountRef.current.appendChild(renderer.domElement);
 
-      // Set up lights
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      // Set up lights (brighter + rim light so model pops)
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
       scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
       directionalLight.position.set(1, 1, 1).normalize();
+      scene.add(directionalLight);
+
+      // subtle rim/back light to increase silhouette contrast
+      const rimLight = new THREE.DirectionalLight(0xffffff, 0.6);
+      rimLight.position.set(-1.2, 0.6, -1);
+      scene.add(rimLight);
       camera.add(directionalLight);
+      camera.add(rimLight);
       scene.add(camera);
 
       // GLTFLoader with Draco support
@@ -51,8 +58,10 @@ const ModelViewer: React.FC = () => {
             }
           });
           scene.add(model);
-          model.position.set(0, 0, 0);
-          model.scale.set(1, 1, 1);
+          model.position.set(-2, -4, -4);
+          model.rotateY(1.2);
+          // slightly increase scale so the model reads larger in the hero
+          model.scale.set(1.12, 1.12, 1.12);
         },
         undefined,
         (error) => {
@@ -60,7 +69,10 @@ const ModelViewer: React.FC = () => {
         }
       );
 
-      //camera.position.set(0, 5, 1);
+      // position camera slightly closer so model appears larger/clearer
+      camera.position.set(0, 1, 4);
+      camera.fov = 60;
+      camera.updateProjectionMatrix();
 
       const animate = () => {
         requestAnimationFrame(animate);
@@ -90,7 +102,7 @@ const ModelViewer: React.FC = () => {
         camera.lookAt(0, 0, 0);
 
         renderer.render(scene, camera);
-     
+
       };
       animate();
 
