@@ -22,24 +22,65 @@ const Profile: React.FC<ProfileProps> = ({ language }) => {
     <Box
       id="profile"
       sx={{
-        py: 8,
-        px: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        justifyContent: 'center',
         maxWidth: 800,
         mx: 'auto',
+        px: 2,
       }}
     >
-      <Typography level="h2" sx={{ mb: 4 }}>
+      <Typography
+        level="h2"
+        sx={{
+          mb: 4,
+          fontSize: { xs: '1.75rem', sm: '2.1rem', md: '2.6rem' },
+          lineHeight: { xs: 1.25, sm: 1.25, md: 1.2 },
+          letterSpacing: { xs: '-0.5px', md: '-1px' }
+        }}
+      >
         {content.title}
       </Typography>
-      <Typography sx={{ mb: 2 }}>
-        {content.p1}
-      </Typography>
-      <Typography sx={{ mb: 2 }}>
-        {content.p2}
-      </Typography>
-      <Typography>
-        {content.p3}
-      </Typography>
+      <Box
+        sx={(theme) => ({
+          backgroundColor: theme.palette.mode === 'dark' ? 'rgba(24,24,27,0.45)' : 'rgba(255,255,255,0.65)',
+          backdropFilter: 'blur(8px) saturate(120%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+          borderRadius: 12,
+          border: theme.palette.mode === 'dark' ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(15,23,42,0.12)',
+          boxShadow: theme.palette.mode === 'dark' ? '0 8px 24px rgba(0,0,0,0.35)' : '0 8px 24px rgba(15,23,42,0.12)',
+          p: { xs: 1.5, sm: 2 },
+          transition: 'background-color 0.3s ease, box-shadow 0.3s ease'
+        })}
+      >
+        <Typography
+          sx={{
+            mb: 2,
+            fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
+            lineHeight: { xs: 1.45, md: 1.5 }
+          }}
+        >
+          {content.p1}
+        </Typography>
+        <Typography
+          sx={{
+            mb: 2,
+            fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
+            lineHeight: { xs: 1.45, md: 1.5 }
+          }}
+        >
+          {content.p2}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
+            lineHeight: { xs: 1.45, md: 1.5 }
+          }}
+        >
+          {content.p3}
+        </Typography>
+      </Box>
     </Box>
   );
 };

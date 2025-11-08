@@ -4,7 +4,6 @@ import CssBaseline from '@mui/joy/CssBaseline';
 import { Box } from '@mui/joy';
 import Header from './components/Header';
 import Home from './components/Home';
-import Skills from './components/Skills';
 import Profile from './components/Profile';
 import Projects from './components/Projects';
 import ModelViewer from './components/ModelViewer';
@@ -28,7 +27,6 @@ function InnerApp() {
       >
         <Header language={language} onLanguageChange={setLanguage} mode={mode || 'dark'} onModeChange={(m) => setMode(m)} />
         <Home language={language} />
-        <Skills />
         <Profile language={language} />
         <Projects language={language} />
       </Box>
@@ -38,7 +36,7 @@ function InnerApp() {
 
 function App() {
   return (
-    <CssVarsProvider defaultColorScheme="dark">
+    <CssVarsProvider defaultMode="dark" disableTransitionOnChange colorSchemeSelector="html">
       <InnerApp />
     </CssVarsProvider>
   );
