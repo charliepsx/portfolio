@@ -1,0 +1,1 @@
+body{background-color:var(--joy-palette-background-body, #0b0b0b)}html[data-joy-color-scheme=light] body{background-color:var(--joy-palette-background-body, #f7f7f7)}@keyframes jump{0%,to{transform:translateY(0)}50%{transform:translateY(-16px)}}
